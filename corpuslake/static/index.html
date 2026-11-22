@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Corpus Lake · 本地语料入湖与近重复审阅</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232a78d6'/%3E%3Cpath d='M8 21c4-8 12-8 16 0' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <div>
+        <h1>Corpus Lake</h1>
+        <p>本地文本语料入湖 · 精确近重复审阅</p>
+      </div>
+    </div>
+    <div class="topbar-meta">
+      <span class="pill" id="db-pill" title="SQLite 数据库路径">db …</span>
+      <span class="pill pill-quiet" id="health-pill"><span class="dot"></span>连接中</span>
+    </div>
+  </header>
+
+  <nav class="tabs" aria-label="主导航">
+    <button class="tab" data-view="overview">总览</button>
+    <button class="tab" data-view="docs">文档</button>
+    <button class="tab" data-view="pairs">相似对</button>
+    <button class="tab" data-view="groups">分组</button>
+    <button class="tab" data-view="task">任务与校验</button>
+  </nav>
+
+  <div id="banner-slot"></div>
+  <main id="main" class="container" tabindex="-1">
+    <p class="loading">正在加载…</p>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <footer class="footer">
+    <span>本地运行，无外部模型。相似度 = 词组分片集合的 Jaccard 指数，按文档对精确计算。</span>
+    <span id="rules-foot"></span>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
